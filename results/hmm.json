@@ -1,0 +1,114 @@
+{
+ "status": "Fitted (exploratory)",
+ "reason": null,
+ "note": "With only two visits per patient the HMM is exploratory; hidden states are statistical patterns, not disease stages.",
+ "n_states": 3,
+ "n_sequences": 1741,
+ "n_observations": 3482,
+ "converged": true,
+ "iterations": 35,
+ "loglik_total": -14375.580142990197,
+ "loglik_per_observation": -4.128541109417058,
+ "transition_matrix": [
+  [
+   0.2292,
+   0.6546,
+   0.1162
+  ],
+  [
+   0.1305,
+   0.7314,
+   0.1382
+  ],
+  [
+   0.1536,
+   0.2276,
+   0.6188
+  ]
+ ],
+ "start_probabilities": [
+  0.1187,
+  0.8787,
+  0.0026
+ ],
+ "state_counts": [
+  465,
+  2787,
+  230
+ ],
+ "state_by_visit": {
+  "visit1": [
+   207,
+   1530,
+   4
+  ],
+  "visit2": [
+   258,
+   1257,
+   226
+  ]
+ },
+ "empirical_transition_counts": [
+  [
+   49,
+   135,
+   23
+  ],
+  [
+   208,
+   1121,
+   201
+  ],
+  [
+   1,
+   1,
+   2
+  ]
+ ],
+ "state_feature_means": {
+  "features": [
+   "Age",
+   "BMI",
+   "Glucose",
+   "HbA1c",
+   "SBP",
+   "DBP",
+   "Heart Rate"
+  ],
+  "values": [
+   [
+    55.462,
+    24.851,
+    5.99,
+    5.897,
+    133.516,
+    79.852,
+    79.346
+   ],
+   [
+    52.781,
+    25.509,
+    5.994,
+    5.928,
+    129.114,
+    79.525,
+    72.0
+   ],
+   [
+    60.63,
+    27.021,
+    8.997,
+    7.246,
+    146.157,
+    83.77,
+    75.774
+   ]
+  ]
+ },
+ "limitations": [
+  "Only two observations per patient: transition estimates rest on one step per patient.",
+  "Visit gaps differ by cohort (4-8 years) but the model treats each step identically.",
+  "Single random start, no model-order selection: results depend on initialisation.",
+  "State labels are arbitrary and not matched to clinical categories."
+ ]
+}

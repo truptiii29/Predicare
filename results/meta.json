@@ -1,0 +1,11 @@
+{
+ "generated_by": "pipeline/run_all.py",
+ "seconds": 56.0,
+ "datasets": [
+  "4_years_datas.xlsx",
+  "5_years_datas.xlsx",
+  "6_years_datas.xlsx",
+  "7_years_datas.xlsx",
+  "8_years_datas.xlsx"
+ ]
+}

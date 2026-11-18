@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Model comparison · PrediCare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="chrome-top"></div>
+<div class="wrap pagehead"><span class="eyebrow">Page 04 · Model comparison</span><h1>Four classifiers, one honest scoreboard.</h1><p>Cross-validation on train + validation, then a single held-out test set. Switch metrics or inspect a classifier's confusion matrix.</p></div>
+<section class="block"><div class="wrap"><div class="grid g4" id="cards"></div></div></section>
+<section class="block"><div class="wrap"><div class="controls"><span class="eyebrow" style="margin:0">Metric</span><div class="seg" id="seg"></div><button class="btn lime" id="dl">Download report (.md)</button></div>
+<div class="grid g2"><div class="card"><h3 id="t-bar">Test performance</h3><div id="c-bar" class="chart"></div><p class="note" id="n-bar"></p></div><div class="card"><h3>Cross-validation vs test</h3><div id="c-cvtest" class="chart"></div><p class="note">Bars show mean 5-fold CV score (error bars = std across folds) next to the held-out test score. Large gaps hint at optimism or small-sample noise.</p></div></div></div></section>
+<section class="block"><div class="wrap"><div class="grid g2"><div class="card"><h3>ROC curves (test set)</h3><div id="c-roc" class="chart"></div><p class="note">Curves closer to the top-left are better; the dashed diagonal is a random classifier.</p></div><div class="card"><h3>Precision–recall curves (test set)</h3><div id="c-pr" class="chart"></div><p class="note" id="n-pr"></p></div></div></div></section>
+<section class="block"><div class="wrap grid asym2"><div class="card"><div class="controls"><select id="msel"></select></div><h3>Confusion matrix</h3><div id="c-cm" class="chart"></div><p class="note" id="n-cm"></p></div><div class="card"><h3>All metrics</h3><div class="scroll" id="tbl"></div><p class="note">CV columns are 5-fold means.</p></div></div></section>
+<section class="block"><div class="wrap"><div class="grid g2" id="small"></div></div></section>
+<div id="chrome-foot"></div>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="js/common.js"></script><script src="js/models.js"></script></body></html>

@@ -1,0 +1,60 @@
+{
+ "available": true,
+ "selected": "Logistic Regression",
+ "highest_by_metric": {
+  "accuracy": {
+   "model": "Random Forest",
+   "value": 0.732824427480916
+  },
+  "recall": {
+   "model": "Random Forest",
+   "value": 0.7721518987341772
+  },
+  "roc_auc": {
+   "model": "Random Forest",
+   "value": 0.8081206336030988
+  },
+  "f1": {
+   "model": "Random Forest",
+   "value": 0.6354166666666666
+  },
+  "precision": {
+   "model": "SVM (RBF)",
+   "value": 0.5428571428571428
+  },
+  "pr_auc": {
+   "model": "Random Forest",
+   "value": 0.5917853062825638
+  },
+  "specificity": {
+   "model": "SVM (RBF)",
+   "value": 0.7377049180327869
+  }
+ },
+ "most_consistent_cv": "Logistic Regression",
+ "cv_minus_test_roc_auc": {
+  "Logistic Regression": 0.002545671591632548,
+  "Random Forest": -0.004249607760895557,
+  "XGBoost": -0.002629702926558064,
+  "SVM (RBF)": -0.0020035449926878446
+ },
+ "summary_lines": [
+  "By the notebook criterion (highest mean 5-fold CV ROC-AUC), Logistic Regression is selected: CV ROC-AUC 0.810 \u00b1 0.009.",
+  "On the held-out test set the highest accuracy is Random Forest (0.733), highest recall is Random Forest (0.772), best F1 is Random Forest (0.635) and highest ROC-AUC is Random Forest (0.808).",
+  "The most stable model across CV folds (smallest ROC-AUC standard deviation) is Logistic Regression (0.0094).",
+  "Test prevalence of progression is 30.2%; a model predicting 'no progression' for everyone would reach 69.8% accuracy, so accuracy alone is not used to pick a model.",
+  "Logistic Regression on the test set: 57 true positives, 22 missed progressors (false negatives), 53 false alarms, 130 true negatives."
+ ],
+ "limitations": {
+  "Logistic Regression": "Assumes linear log-odds in the features; cannot capture interactions unless engineered. Balanced class weights raise recall at the cost of precision.",
+  "Random Forest": "Less interpretable than coefficients; impurity importance can favour continuous features; depth/leaf limits were fixed, not tuned.",
+  "XGBoost": "Many hyperparameters; was not tuned beyond notebook defaults; can overfit a cohort this small without careful validation.",
+  "SVM (RBF)": "Probabilities come from internal Platt scaling; no native feature importance; scales poorly and is sensitive to C and gamma (untuned)."
+ },
+ "tradeoffs": {
+  "recall": "Share of true progressors flagged. Low recall = missed people who will progress (false negatives).",
+  "precision": "Share of flagged people who truly progress. Low precision = unnecessary follow-up (false positives).",
+  "why_recall_matters": "In progression screening research a missed progressor delays lifestyle or clinical attention, whereas a false alarm usually costs an extra test. Recall therefore deserves weight, but must be read together with precision and specificity."
+ },
+ "caveat": "Single held-out test split of a modest cohort: small differences between models are within sampling noise. External validation is required before any clinical use."
+}

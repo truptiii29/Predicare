@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study design · PrediCare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="chrome-top"></div>
+<div class="wrap pagehead"><span class="eyebrow">Page 02 · Study design</span><h1>From two clinic visits to one clear question.</h1><p>Can baseline measurements recorded while a patient is prediabetic identify who goes on to develop Type 2 Diabetes at follow-up?</p></div>
+<section class="block"><div class="wrap grid asym"><div class="card"><h3>Five follow-up cohorts</h3><div id="c-cohort" class="chart"></div><p class="note" id="n-cohort"></p></div>
+<div class="card dark"><span class="eyebrow">Outcome definition (verified against data)</span><h3>progressed_to_t2d</h3><p>Baseline visit (<code>timed = 1</code>) with <code>type_3 = 1</code> (prediabetes) joined by <code>patientid</code> to the follow-up visit (<code>timed = 2</code>).</p><p><b>1</b> if follow-up <code>type_3 = 2</code> (Type 2 Diabetes), otherwise <b>0</b>.</p><p class="note">Only baseline values are used as predictors, so follow-up measurements cannot leak into the model.</p><div id="transition"></div></div></div></section>
+<section class="block"><div class="wrap grid asym2"><div><span class="eyebrow">Pipeline</span><h2>Preprocessing and evaluation</h2></div><ol class="steps" id="steps"></ol></div></section>
+<section class="block"><div class="wrap"><span class="eyebrow">Train / validation / test</span><h2>70 / 15 / 15 split</h2><div id="split" class="grid g3"></div><div id="audit" style="margin-top:1.5rem"></div></div></section>
+<div id="chrome-foot"></div>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="js/common.js"></script><script src="js/study.js"></script></body></html>
